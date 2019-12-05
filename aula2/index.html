@@ -7,9 +7,17 @@
     <title>Aprendencdo Vue JS sem Node</title>
 </head>
 <body>
-    <h1>Olá</h1>
+    <div id="app">
+        <input 
+            type="text"
+            :value ="message"
+            @keyup.enter="changeInputValue"
+        >
+        {{message}}<br>{{aula}}<br>{{states}}
+    </div>
 
-    <!--inserção do node  em baixo para melhora de performance-->
+    <!--inserção do node em baixo para melhora de performance-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
