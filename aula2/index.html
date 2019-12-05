@@ -8,12 +8,18 @@
 </head>
 <body>
     <div id="app">
-        <input 
-            type="text"
-            :value ="message"
-            @keyup.enter="changeInputValue"
-        >
-        {{message}}<br>{{aula}}<br>{{states}}
+        <section>
+            <header>
+                <h1>{{title}}</h1>
+            </header>
+            <input type="text" v-model="newState">
+            <button v-on:click="addStateList">Adicionar</button>
+            <div v-for="item in states">
+                <p>{{item.id}} {{item.nome}}</p>
+            </div>
+            <p>{{newState}}</p>
+        </section>
+
     </div>
 
     <!--inserção do node em baixo para melhora de performance-->

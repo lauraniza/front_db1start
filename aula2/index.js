@@ -1,17 +1,30 @@
 var app = new Vue({
     el: '#app',
     data: {
+        title: 'Meus estados favoritos',
         message: 'Hello Vue!',
         aula: 'Front end com js',
-        states: [{"id":2,"nome":"Paraná"},
-            {"id":3,"nome":"Rio de Janeiro"},{"id":4,"nome":"Bahia"}]
+        states: [
+            {"id":1,"nome":"Paraná"},
+            {"id":2,"nome":"Rio de Janeiro"},
+            {"id":3,"nome":"Bahia"},
+            {"id":4,"nome":"Santa Catarina"}
+        ],
+        newState: ' '
     },
     methods: {
         changeInputValue(event){
-        this.message=event.target.value;
+        this.newState=event.target.value;
         },
-        getStates(){
-            //this.states=['Paraná','São Paulo']
+        setNewState(event){
+            this.newState=event.target.value;
+        },
+        addStateList(){
+            const id=this.states.length;
+            this.states.push({
+                id: id,
+                nome: this.newState
+            })
         }
     },
     created(){
